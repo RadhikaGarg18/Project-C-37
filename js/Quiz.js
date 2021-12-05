@@ -29,35 +29,29 @@ class Quiz {
   }
 
   play(){
-    //write code here to hide question elements
-    /*this.title.hide();
-    this.input1.hide();
-    this.button.hide();
-    this.input2.hide();*/
-  
-    //write code to change the background color here
+    
    background("yellow");
-    //write code to show a heading for showing the result of Quiz
-    fill("black");
-    textSize(30)
-    text("Results",370,40);
-    //call getContestantInfo( ) here
-    contestant.getPlayerInfo();
-    if(allContestants !== undefined){
+   fill("black");
+   textSize(30)
+   text("Results",370,40);
+   Contestant.getPlayerInfo();
+
+   if(allContestants !== undefined){
       fill("blue");
       textSize(20);
       text("*NOTE: Contestant who answers correct are highlighted in green color!*",130,230);
-
     }
 
     for(var plr in allContestants){
       var correctAns = "2";
       if(correctAns === allContestants[plr].answer){
         fill("green");
+        text(allContestants[plr].name + ":" + allContestants[plr].answer,350,300)
       }
       else{
         fill("red")
+        text(allContestants[plr].name + ":" + allContestants[plr].answer,350,350)
       }
-  }}
-  
+  }
+ }
 }
